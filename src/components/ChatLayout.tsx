@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Moon, ShoppingBag, Sun } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
 import Sidebar from "./Sidebar";
 import ProductCarousel from "./ProductCarousel";
@@ -8,6 +8,7 @@ import ProductCarousel from "./ProductCarousel";
 const ChatLayout = () => {
   const [message, setMessage] = useState("");
   const { theme, setTheme } = useTheme();
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [messages, setMessages] = useState([
     {
       role: "assistant",
@@ -38,12 +39,26 @@ const ChatLayout = () => {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      <Sidebar />
+      <div className={`${sidebarOpen ? 'block' : 'hidden'} md:block`}>
+        <Sidebar />
+      </div>
       <main className="flex-1 flex flex-col">
         <header className="h-16 glass flex items-center justify-between px-6 z-10">
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="h-6 w-6 text-primary" />
-            <h1 className="text-xl font-semibold">ShopChat</h1>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="p-2 hover:bg-secondary rounded-full transition-colors"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            <div className="flex items-center gap-2">
+              <img
+                src="/lovable-uploads/e8addeab-7737-41f4-9c9f-0e6070c3cab7.png"
+                alt="ShopChat Logo"
+                className="h-8 w-8"
+              />
+              <h1 className="text-xl font-semibold">ShopChat</h1>
+            </div>
           </div>
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -89,7 +104,7 @@ const ChatLayout = () => {
               />
               <button
                 type="submit"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-secondary transition-colors"
               >
                 Send
               </button>
