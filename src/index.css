@@ -60,4 +60,12 @@
   .glass {
     @apply bg-background/50 backdrop-blur-xl border border-border/50 shadow-lg;
   }
+
+  .dark .message-bubble {
+    @apply shadow-[0_8px_32px_rgba(0,0,0,0.2)] bg-background/70;
+  }
+
+  .dark .side-chat {
+    @apply shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:bg-accent/30;
+  }
 }

@@ -22,7 +22,7 @@ const Sidebar = () => {
           {recentChats.map((chat) => (
             <button
               key={chat.id}
-              className="w-full p-3 flex flex-col items-start gap-1 rounded-lg hover:bg-accent transition-colors text-left"
+              className="w-full p-3 flex flex-col items-start gap-1 rounded-lg side-chat text-left"
             >
               <span className="text-sm font-medium">{chat.title}</span>
               <span className="text-xs text-muted-foreground">{chat.date}</span>
@@ -32,7 +32,7 @@ const Sidebar = () => {
       </div>
 
       <div className="p-4 border-t border-border/50">
-        <button className="w-full p-3 flex items-center gap-3 rounded-lg hover:bg-accent transition-colors">
+        <button className="w-full p-3 flex items-center gap-3 rounded-lg side-chat">
           <User className="h-5 w-5" />
           <div className="flex flex-col items-start">
             <span className="text-sm font-medium">John Doe</span>

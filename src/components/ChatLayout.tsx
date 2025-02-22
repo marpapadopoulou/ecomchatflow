@@ -39,7 +39,7 @@ const ChatLayout = () => {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      <div className={`${sidebarOpen ? 'block' : 'hidden'} md:block`}>
+      <div className={`${sidebarOpen ? 'w-80' : 'w-0'} transition-all duration-300 overflow-hidden`}>
         <Sidebar />
       </div>
       <main className="flex-1 flex flex-col">
@@ -78,7 +78,7 @@ const ChatLayout = () => {
                 } animate-fade-in`}
               >
                 <div
-                  className={`max-w-[80%] p-4 rounded-2xl ${
+                  className={`max-w-[80%] p-4 rounded-2xl message-bubble ${
                     msg.role === "user"
                       ? "bg-primary text-primary-foreground"
                       : "glass"
