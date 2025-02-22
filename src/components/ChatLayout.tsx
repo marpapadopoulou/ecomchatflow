@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
@@ -79,9 +78,7 @@ const ChatLayout = () => {
               >
                 <div
                   className={`max-w-[80%] p-4 rounded-2xl message-bubble ${
-                    msg.role === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "glass"
+                    msg.role === "user" ? "user-message" : ""
                   }`}
                 >
                   <p className="text-sm">{msg.content}</p>
