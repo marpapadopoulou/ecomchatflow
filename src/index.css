@@ -62,11 +62,11 @@
   }
 
   .dark .message-bubble {
-    @apply bg-background/70;
+    @apply bg-background/70 shadow-[0_8px_32px_rgba(0,0,0,0.2)];
   }
 
   .dark .message-bubble.user-message {
-    @apply bg-primary text-primary-foreground;
+    @apply bg-primary text-primary-foreground shadow-[0_8px_32px_rgba(0,0,0,0.2)];
   }
 
   .dark .side-chat {
